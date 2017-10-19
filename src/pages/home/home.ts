@@ -57,7 +57,7 @@ export class HomePage {
             if (item.startsWith ('La Primitiva: resultados')) {
               console.log (k + '-' + item);
               arr.push ({
-                des: uno[0].innerText,
+                des: uno[0].innerText + ' ' + uno[1].innerText + ' ' + uno[2].innerText,
                 title: item
               })
             }      
