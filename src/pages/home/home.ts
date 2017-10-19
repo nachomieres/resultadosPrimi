@@ -53,12 +53,15 @@ export class HomePage {
           let uno = par.parseFromString (dato[k].innerHTML, "text/html").getElementsByTagName ("b");
           console.log (uno);
           if (uno.length > 0) {
+            let textoFecha = par.parseFromString(dato[k].innerHTML, "text/html").getElementsByTagName ('pubdate')[0].textContent;
+            let fecha = new Date (textoFecha); 
+            console.log (fecha.toDateString());
             var item = par.parseFromString(dato[k].innerHTML, "text/html").getElementsByTagName ('title')[0].innerText;
             if (item.startsWith ('La Primitiva: resultados')) {
               console.log (k + '-' + item);
               arr.push ({
                 des: uno[0].innerText + ' ' + uno[1].innerText + ' ' + uno[2].innerText,
-                title: item
+                title: fecha.toLocaleDateString()
               })
             }      
           }

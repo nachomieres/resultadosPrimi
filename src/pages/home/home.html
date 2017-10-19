@@ -9,8 +9,8 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let item  of xmlItems">
-      <h2 text-wrap>{{item.title}}</h2>
-      <span [innerHTML]="item.des"></span>
+      <h1 text-center text-wrap>{{item.title}}</h1>
+      <h3 text-center [innerHTML]="item.des"></h3>
     </ion-item>
   </ion-list>
 </ion-content>
