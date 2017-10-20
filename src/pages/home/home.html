@@ -7,10 +7,14 @@
 </ion-header>
 
 <ion-content padding>
+  
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>       
   <ion-list>
     <ion-item *ngFor="let item  of xmlItems">
-      <h1 text-center text-wrap>{{item.title}}</h1>
-      <h3 text-center [innerHTML]="item.des"></h3>
+      <h1 text-center text-wrap>{{item.fecha}}</h1>
+      <h2 text-center [innerHTML]="item.des"></h2>
     </ion-item>
   </ion-list>
 </ion-content>

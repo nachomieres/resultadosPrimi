@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ParserPrimiProvider } from '../providers/parser-primi/parser-primi';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ParserPrimiProvider
   ]
 })
 export class AppModule {}
