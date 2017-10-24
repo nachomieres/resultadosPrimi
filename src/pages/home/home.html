@@ -1,20 +1,32 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      Resultados Primitiva
+      PrimiNacho 1.0
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  
-  <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>       
-  <ion-list>
-    <ion-item *ngFor="let item  of xmlItems">
-      <h1 text-center text-wrap>{{item.fecha}}</h1>
-      <h2 text-center [innerHTML]="item.des"></h2>
-    </ion-item>
-  </ion-list>
+  <ion-grid>
+    <ion-row text-center style="margin-top: 20px;">
+      <ion-col>
+        <img (click)="aPrimitiva()" src="assets/img/imagen_desplegable_lapr.png" />
+        <h2>La Primitiva</h2>
+      </ion-col>
+      <ion-col>
+        <img (click)="aBonoloto()" src="assets/img/imagen_desplegable_bono.png" />        
+        <h2>Bonoloto</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row text-center style="margin-top: 20px;">
+      <ion-col>
+        <img (click)="aPrimitiva()" src="assets/img/imagen_desplegable_elgr.png" />
+        <h2>El Gordo</h2>
+      </ion-col>
+      <ion-col>
+        <img (click)="aBonoloto()" src="assets/img/imagen_desplegable_emil.png" />        
+        <h2>Euromillones</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
