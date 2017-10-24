@@ -6,13 +6,20 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Escanear Boleto</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="aHome()">
+          <ion-icon name="home"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <div text-center>
+    <ion-icon (click)="escanea()" name="camera"></ion-icon>
+  </div>
 </ion-content>

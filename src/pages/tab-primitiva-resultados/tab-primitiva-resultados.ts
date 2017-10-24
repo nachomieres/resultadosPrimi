@@ -1,12 +1,8 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the TabPrimitivaResultadosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ParserPrimiProvider } from '../../providers/parser-primi/parser-primi';
 
 @IonicPage()
 @Component({
@@ -15,8 +11,34 @@ import { IonicPage } from 'ionic-angular';
 })
 export class TabPrimitivaResultadosPage {
 
-  constructor() {
-    
+  public xmlItems : any;
+  public logo: string;
+   
+   constructor(public navCtrl: NavController, private parserPrimi: ParserPrimiProvider) 
+   {}
+   ionViewWillEnter()
+   {
+      this.cargaDatos ();
+   }
+
+   cargaDatos () {
+    this.parserPrimi.loadXML ('la-primitiva').subscribe (data => {
+      this.xmlItems = data;
+      console.log (data);
+    });    
+   }
+
+   doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      this.cargaDatos ();
+      refresher.complete();
+    }, 2000);
   }
 
+  aHome () {
+    this.navCtrl.setRoot (HomePage);
+  }
 }

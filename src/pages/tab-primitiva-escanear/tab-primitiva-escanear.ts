@@ -1,3 +1,4 @@
+import { HomePage } from '../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -18,8 +19,12 @@ export class TabPrimitivaEscanearPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TabPrimitivaEscanearPage');
+  escanea () {
+    console.log ("foto");
+  }
+
+  aHome () {
+    this.navCtrl.setRoot (HomePage);
   }
 
 }
